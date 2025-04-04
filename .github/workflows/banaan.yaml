@@ -15,6 +15,10 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "$GITHUB_CONTEXT"
+      - name: Version
+        run: echo 3
       - name: Tell me how it is
         run: |
           echo "${{ toJson(github.event.pull_request.base.ref == 'master' && (github.event.action == 'opened' || (github.event.action == 'edited' && github.event.changes.base))) }}"
+      - name: Done
+        run: echo done
