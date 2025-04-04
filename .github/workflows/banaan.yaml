@@ -17,4 +17,4 @@ jobs:
           echo "$GITHUB_CONTEXT"
       - name: Tell me how it is
         run: |
-          echo "${{ github.pull_request.base.ref == 'master' && (github.event.action == 'opened' || (github.event.action == 'edited' && github.event.changes.base)) }}"
+          echo "${{ github.event.pull_request.base.ref == 'master' && (github.event.action == 'opened' || (github.event.action == 'edited' && github.event.changes.base)) }}"
